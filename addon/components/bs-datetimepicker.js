@@ -1,7 +1,7 @@
 import Ember from 'ember';
 
 const { computed, run } = Ember;
-const computedProps = Ember.A(['minDate', 'maxDate', 'disabledDates', 'enabledDates', 'dateIcon', 'placeholder']);
+const computedProps = Ember.A(['minDate', 'maxDate', 'disabledDates', 'enabledDates', 'dateIcon', 'placeholder', 'pathToSvg']);
 
 var bsDateTimePickerComponent = Ember.Component.extend({
   concatenatedProperties: ['textFieldClassNames'],
