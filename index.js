@@ -5,7 +5,7 @@ var Funnel = require('broccoli-funnel');
 var mergeTrees = require('broccoli-merge-trees');
 
 module.exports = {
-  name: require('./package').name
+  name: require('./package').name,
 
   included: function(target) {
     this._super.included.apply(this, arguments);
@@ -19,35 +19,35 @@ module.exports = {
       app.import('vendor/bootstrap/css/bootstrap-theme.css');
     }
 
-    // Import css and glyphicons from bootstrap
-    if (options.importBootstrapCSS) {
-      app.import('vendor/bootstrap/css/bootstrap.css');
-      app.import('vendor/bootstrap/css/bootstrap.css.map', { destDir: 'assets' });
+    // // Import css and glyphicons from bootstrap
+    // if (options.importBootstrapCSS) {
+    //   app.import('vendor/bootstrap/css/bootstrap.css');
+    //   app.import('vendor/bootstrap/css/bootstrap.css.map', { destDir: 'assets' });
 
-      // Import glyphicons
-      app.import('vendor/bootstrap/fonts/glyphicons-halflings-regular.eot', { destDir: '/fonts' });
-      app.import('vendor/bootstrap/fonts/glyphicons-halflings-regular.svg', { destDir: '/fonts' });
-      app.import('vendor/bootstrap/fonts/glyphicons-halflings-regular.ttf', { destDir: '/fonts' });
-      app.import('vendor/bootstrap/fonts/glyphicons-halflings-regular.woff', { destDir: '/fonts' });
-      app.import('vendor/bootstrap/fonts/glyphicons-halflings-regular.woff2', { destDir: '/fonts'});
-    }
+    //   // Import glyphicons
+    //   app.import('vendor/bootstrap/fonts/glyphicons-halflings-regular.eot', { destDir: '/fonts' });
+    //   app.import('vendor/bootstrap/fonts/glyphicons-halflings-regular.svg', { destDir: '/fonts' });
+    //   app.import('vendor/bootstrap/fonts/glyphicons-halflings-regular.ttf', { destDir: '/fonts' });
+    //   app.import('vendor/bootstrap/fonts/glyphicons-halflings-regular.woff', { destDir: '/fonts' });
+    //   app.import('vendor/bootstrap/fonts/glyphicons-halflings-regular.woff2', { destDir: '/fonts'});
+    // }
 
     // Import css from bootstrap-datetimepicker
-    app.import('vendor/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.css');
+    // app.import('vendor/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.css');
 
-    if(options.importFontAwesome) {
-      app.import(bowerDir + '/font-awesome/css/font-awesome.min.css', { destDir: '/fonts'});
-      app.import(bowerDir + '/font-awesome/fonts/fontawesome-webfont.woff', { destDir: '/fonts'});
-      app.import(bowerDir + '/font-awesome/fonts/fontawesome-webfont.woff2', { destDir: '/fonts'});
-      app.import(bowerDir + '/font-awesome/fonts/fontawesome-webfont.eot', { destDir: '/fonts'});
-      app.import(bowerDir + '/font-awesome/fonts/fontawesome-webfont.svg', { destDir: '/fonts'});
-      app.import(bowerDir + '/font-awesome/fonts/fontawesome-webfont.ttf', { destDir: '/fonts'});
-    }
+    // if(options.importFontAwesome) {
+    //   app.import(bowerDir + '/font-awesome/css/font-awesome.min.css', { destDir: '/fonts'});
+    //   app.import(bowerDir + '/font-awesome/fonts/fontawesome-webfont.woff', { destDir: '/fonts'});
+    //   app.import(bowerDir + '/font-awesome/fonts/fontawesome-webfont.woff2', { destDir: '/fonts'});
+    //   app.import(bowerDir + '/font-awesome/fonts/fontawesome-webfont.eot', { destDir: '/fonts'});
+    //   app.import(bowerDir + '/font-awesome/fonts/fontawesome-webfont.svg', { destDir: '/fonts'});
+    //   app.import(bowerDir + '/font-awesome/fonts/fontawesome-webfont.ttf', { destDir: '/fonts'});
+    // }
 
     // Import css from bootstrap
-    if (options.importBootstrapJS) {
-      app.import('vendor/bootstrap/js/bootstrap.js');
-    }
+    // if (options.importBootstrapJS) {
+    //   app.import('vendor/bootstrap/js/bootstrap.js');
+    // }
 
     // Import js from bootstrap-datetimepicker
     app.import('vendor/eonasdan-bootstrap-datetimepicker/src/js/bootstrap-datetimepicker.js');
