@@ -1,3 +1,4 @@
+import { run } from '@ember/runloop';
 import Ember from "ember";
 import hbs from 'htmlbars-inline-precompile';
 import startApp from '../helpers/start-app';
@@ -11,10 +12,10 @@ moduleForComponent('bs-datetimepicker', 'ember-bootstrap-datetimepicker integrat
     App = startApp();
   },
   teardown: function() {
-    Ember.run(App, 'destroy');
+    run(App, 'destroy');
     // clear up component (this should be done by ember-qunit soon!)
     if (component) {
-      Ember.run(component, 'destroy');
+      run(component, 'destroy');
       component = null;
     }
   }

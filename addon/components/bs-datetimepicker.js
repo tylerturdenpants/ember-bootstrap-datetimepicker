@@ -1,10 +1,14 @@
-import Ember from 'ember';
+import $ from 'jquery';
+import { isNone } from '@ember/utils';
+import Component from '@ember/component';
+import { A } from '@ember/array';
+import { computed } from '@ember/object';
+import { run } from '@ember/runloop';
 import DynamicAttributeBindings from '../-private/dynamic-attribute-bindings';
 
-const { computed, run } = Ember;
-const computedProps = Ember.A(['minDate', 'maxDate', 'disabledDates', 'enabledDates', 'dateIcon', 'placeholder', 'pathToSvg']);
+const computedProps = A(['minDate', 'maxDate', 'disabledDates', 'enabledDates', 'dateIcon', 'placeholder', 'pathToSvg']);
 
-var bsDateTimePickerComponent = Ember.Component.extend(DynamicAttributeBindings, {
+var bsDateTimePickerComponent = Component.extend(DynamicAttributeBindings, {
   attributeBindings: [],
   concatenatedProperties: ['textFieldClassNames'],
   classNames: ['date'],
@@ -57,7 +61,7 @@ var bsDateTimePickerComponent = Ember.Component.extend(DynamicAttributeBindings,
     bsDateTimePicker.on('dp.change', ev => {
       run(() => {
         if(this.attrs.updateDate) {
-          if (Ember.isNone(ev.date) || ev.date === false) {
+          if (isNone(ev.date) || ev.date === false) {
             this.sendAction('updateDate', undefined);
           } else if (!ev.date.isSame(this.getAttr('date'))) {
             if (this.attrs.forceDateOutput) {
@@ -113,7 +117,7 @@ var bsDateTimePickerComponent = Ember.Component.extend(DynamicAttributeBindings,
   },
 
   _buildConfig() {
-    var datetimepickerDefaultConfig = Ember.$.fn.datetimepicker.defaults;
+    var datetimepickerDefaultConfig = $.fn.datetimepicker.defaults;
     var isDatetimepickerConfigKeys = Object.keys(datetimepickerDefaultConfig);
     var config = {};
     var configKey;

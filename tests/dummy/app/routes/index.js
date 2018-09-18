@@ -1,10 +1,11 @@
-import Ember from 'ember';
+import EmberObject from '@ember/object';
+import Route from '@ember/routing/route';
 import moment from 'moment';
 import FaIconsMixin from 'dummy/mixins/faicons';
 
-export default Ember.Route.extend({
+export default Route.extend({
   model: function() {
-    return Ember.Object.extend(FaIconsMixin).create({
+    return EmberObject.extend(FaIconsMixin).create({
       date1: moment(),
       date2: undefined,
       mindate: moment("2014-11-01"),

@@ -1,0 +1,1 @@
+[2,"Handlebars",26,"tests/integration/misc-test.js","  assert.expect(3);\n  this.render(\n    Ember.Handlebars.compile(\n      '{{bs-datetimepicker}}'\n    )"]
