@@ -1,4 +1,3 @@
-/* jshint node: true */
 'use strict';
 
 var path = require('path');
@@ -6,7 +5,7 @@ var Funnel = require('broccoli-funnel');
 var mergeTrees = require('broccoli-merge-trees');
 
 module.exports = {
-  name: 'ember-bootstrap-datetimepicker',
+  name: require('./package').name
 
   included: function(target) {
     this._super.included.apply(this, arguments);
